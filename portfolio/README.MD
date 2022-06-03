@@ -2,9 +2,15 @@
 
 ## Naver 영화 검색
  - WPF (.NET Framewokr 4.7.2 / C#)
-   - MahApps.Metro Design
+   - MahApps.Metro Metro UI / Morden UI
+   - Newtonsoft.Json
    - Naver OpenAPI
-   - Youtube OpenAPI
-   - Json datahandling
+   -  Google.Apis.Youtube.v3
+   - CefSharp WebBrowser component
+   - EntityFrmework DB
   
-  ![NaverMovieFinder](https://github.com/spearstring/StudyWpf/blob/main/capture/matrix.png)
+![NaverMovieFinder](https://raw.githubusercontent.com/spearstring/StudyWpf/main/capture/matrix.png)
+실행화면
+
+![YoutubePlay](https://raw.githubusercontent.com/spearstring/StudyWpf/main/capture/lala.png)
+검색영화 예고편보기 실행화면
