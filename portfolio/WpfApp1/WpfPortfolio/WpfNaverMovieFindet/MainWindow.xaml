@@ -118,7 +118,7 @@
 
             <Button x:Name="btnWatchTrailer" Content="예고편 보기" Width="150" Margin="10" 
                     Height="60" Background="Firebrick" Foreground="White"
-                    Style="{StaticResource MahApps.Styles.Button.MetroSquare}"
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
                     FontSize="12" Click="btnWatchTrailer_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
