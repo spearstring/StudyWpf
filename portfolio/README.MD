@@ -20,3 +20,12 @@
 
 ![YoutubePlay](https://raw.githubusercontent.com/spearstring/StudyWpf/main/capture/lala.png)
 검색영화 예고편보기 실행화면
+
+
+<br/>
+
+## Naver 뉴스검색
+- WPF (.NET Framewokr 4.7.2 / C#)
+   - MahApps.Metro Metro UI / Morden UI
+   - Newtonsoft.Json
+   - Naver OpenAPI
