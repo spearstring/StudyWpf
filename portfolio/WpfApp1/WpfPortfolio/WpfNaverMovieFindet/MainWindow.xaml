@@ -9,13 +9,13 @@
     xmlns:local="clr-namespace:WpfNaverMovieFindet"
     mc:Ignorable="d"
     Title="Naver MovieFinder v2.0"
-    Height="650" Width="1024" ResizeMode="NoResize" ShowTitleBar="True">
+    Height="650" Width="1024" ResizeMode="NoResize" ShowTitleBar="True" Icon="naver_icon.png">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconForkAwesome Kind="YoutubePlay" Margin="5,7,0,0"  Foreground="White" />
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
@@ -26,14 +26,15 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="67*" />
+            <ColumnDefinition Width="585*"/>
+            <ColumnDefinition Width="326*" />
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
-        
+
         <!-- 검색창 영역 -->
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal"
-                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
             <TextBox x:Name="txtSearchName" Width="500" Margin="5,10" FontSize="14" 
                      mah:TextBoxHelper.Watermark="검색할 영화명 입력.."
                      mah:TextBoxHelper.UseFloatingWatermark="True"
@@ -51,12 +52,12 @@
                 </Button.ContentTemplate>
             </Button>
         </StackPanel>
-        
+
         <!-- 검색결과 그리드 영역 -->
         <DataGrid x:Name="grdResult" Grid.Row="2" Grid.Column="1" Margin="10"
                   Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
                   IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="False"
-                  SelectedCellsChanged="grdResult_SelectedCellsChanged">
+                  SelectedCellsChanged="grdResult_SelectedCellsChanged" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Title}" Header="한글제목" FontWeight="Bold" />
                 <DataGridTextColumn Binding="{Binding SubTitle}" Header="영어제목" />
@@ -66,14 +67,16 @@
                 <DataGridTextColumn Binding="{Binding UserRating}" Header="네티즌평점" />
             </DataGrid.Columns>
         </DataGrid>
-        
+
         <!-- 포스터 영역 -->
-        <Image x:Name="imgPoster" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" 
+        <Image x:Name="imgPoster" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" 
                Source="resource/No_Picture.jpg" Margin="10,60"/>
-        
+
         <!-- 버튼 영역 -->
-        <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button x:Name="btnAddWatchList" Content="즐겨찾기 추가" Width="150" Margin="10" 
+        <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <Button x:Name="btnAddWatchList" Content="즐겨찾기 추가" Width="150" Height="60"
+                    Margin="10" 
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
                     FontSize="12" Click="btnAddWatchList_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
@@ -86,6 +89,8 @@
             </Button>
 
             <Button x:Name="btnViewWatchList" Content="즐겨찾기 보기" Width="150" Margin="10" 
+                    Height="60"
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
                     FontSize="12" Click="btnViewWatchList_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
@@ -98,6 +103,8 @@
             </Button>
 
             <Button x:Name="btnDelWatchList" Content="즐겨찾기 삭제" Width="150" Margin="10" 
+                    Height="60"
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
                     FontSize="12" Click="btnDelWatchList_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
@@ -110,6 +117,8 @@
             </Button>
 
             <Button x:Name="btnWatchTrailer" Content="예고편 보기" Width="150" Margin="10" 
+                    Height="60" Background="Firebrick" Foreground="White"
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare}"
                     FontSize="12" Click="btnWatchTrailer_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
@@ -122,6 +131,8 @@
             </Button>
 
             <Button x:Name="btnNaverMovie" Content="네이버 영화" Width="150" Margin="10" 
+                    Height="60"
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
                     FontSize="12" Click="btnNaverMovie_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
@@ -133,9 +144,9 @@
                 </Button.ContentTemplate>
             </Button>
         </StackPanel>
-        
+
         <!-- 상태바 영역 -->
-        <StatusBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
+        <StatusBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5">
             <StatusBarItem Content="Naver &amp; Youtube OpenAPI App" />
             <Separator Style="{StaticResource MahApps.Styles.Separator.StatusBar}" />
             <StatusBarItem x:Name="stsResult" />
