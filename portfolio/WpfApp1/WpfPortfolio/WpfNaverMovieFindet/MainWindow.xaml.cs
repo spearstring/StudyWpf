@@ -2,7 +2,6 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -72,7 +71,7 @@ namespace WpfNaverMovieFindet
         }
 
         /// <summary>
-        /// 네이버 실제 검색 메서드
+        /// 네이버 영화 검색 메서드
         /// </summary>
         /// <param name="searchName"></param>
         private void SearchNameOpenApi(string searchName)
