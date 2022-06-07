@@ -4,7 +4,7 @@
 
 ## Naver 영화 검색
  - WPF (.NET Framewokr 4.7.2 / C#)
-   - MahApps.Metro Metro UI / Morden UI
+   - MahApps.Metro Metro UI / Modern UI
    - Newtonsoft.Json
    - Naver OpenAPI
    -  Google.Apis.Youtube.v3
@@ -26,7 +26,7 @@
 
 ## Naver 뉴스검색
 - WPF (.NET Framewokr 4.7.2 / C#)
-   - MahApps.Metro Metro UI / Morden UI
+   - MahApps.Metro Metro UI / Modern UI
    - Newtonsoft.Json
    - Naver OpenAPI
 
