@@ -18,7 +18,7 @@ namespace WpfMvvmApp.Models
             get { return email; }   // get => email;   
             set
             {
-                if (Commons.IsvalidEmail(email))
+                if (!Commons.IsvalidEmail(value))
                 {
                     throw new Exception("Invalid Email");
                 }

@@ -107,13 +107,15 @@ namespace WpfNaverNewsSearch
 
             foreach (var item in json_array)
             {
+                var tempTitle = Regex.Replace(item["title"].ToString(), @"<(.|\n)*?>", string.Empty);
+                var tempDes = Regex.Replace(item["description"].ToString(), @"<(.|\n)*?>", string.Empty);
                 var tempDate = DateTime.Parse(item["pubDate"].ToString());
                 NewsItem news = new NewsItem()
                 {
-                    Title = Regex.Replace(item["title"].ToString(), @"<(.|\n)*?>", string.Empty),
+                    Title = tempTitle.Replace("&quot;", "\"").Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", "").Replace("&amp;", "&"),
                     OriginalLink = item["originallink"].ToString(),
                     Link = item["link"].ToString(),
-                    Description = Regex.Replace(item["description"].ToString(), @"<(.|\n)*?>", string.Empty),
+                    Description = tempDes.Replace("&quot;", "\"").Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", "").Replace("&amp;", "&"),
                     PubDate = tempDate.ToString("yyyy-MM-dd HH:mm")
                 };
 
@@ -124,7 +126,7 @@ namespace WpfNaverNewsSearch
         }
 
         /// <summary>
-        /// 선택한 뉴스 보가
+        /// 선택한 뉴스 보기
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
