@@ -32,7 +32,7 @@ C# WPF 학습리포지토리
  - SmartHome 시스템 만들기 시작
 
 ## Day 7
- - SamrtHome 시스템 만들기
+ - SamrtHome 시스템 만들기 ( [클릭](https://github.com/spearstring/StudyWpf/tree/main/portfolio#smarthome-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%95%B1) )
    - MQTT Publish 프로그램
    - MQTT Broker 설정
    - MQTT Monitoring 프로그램
