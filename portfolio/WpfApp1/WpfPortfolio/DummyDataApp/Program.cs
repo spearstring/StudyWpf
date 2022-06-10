@@ -58,8 +58,42 @@ namespace DummyDataApp
         {
             MqttThread = new Thread(() => LooPublish());
             MqttThread.Start();
+
+            //Thread thread2 = new Thread(() => LooPublish2());
+            //thread2.Start();
+
+            //Thread thread3 = new Thread(() => LooPublish3());
+            //thread3.Start();
         }
 
+        //private static void LooPublish3()
+        //{
+        //    while (true)
+        //    {
+        //        SensorInfo tempValue = SensorData.Generate();
+        //        tempValue.DevId = "TEST";
+        //        CurrValue = JsonConvert.SerializeObject(tempValue, Formatting.Indented);
+        //        Client.Publish("home/device/testdata/", Encoding.Default.GetBytes(CurrValue));
+        //        Console.WriteLine($"Published newdata : {CurrValue}");
+        //        Thread.Sleep(2000);
+        //    }
+        //}
+
+        //// LoopPublish와는 별개로 동작하는 태스크
+        //private static void LooPublish2()
+        //{
+        //    while (true)
+        //    {
+        //        SensorInfo tempValue = SensorData.Generate();
+        //        tempValue.DevId = Guid.NewGuid().ToString(); // newdata topic DEVID 변경
+        //        CurrValue = JsonConvert.SerializeObject(tempValue, Formatting.Indented);
+        //        Client.Publish("home/device/newdata/", Encoding.Default.GetBytes(CurrValue));
+        //        Console.WriteLine($"Published newdata : {CurrValue}");
+        //        Thread.Sleep(1500);
+        //    }
+        //}
+
+        // Main 메서드 실행되는 부분과는 별개로 동작
         private static void LooPublish()
         {
             while (true)
@@ -67,7 +101,7 @@ namespace DummyDataApp
                 SensorInfo tempValue = SensorData.Generate();
                 CurrValue = JsonConvert.SerializeObject(tempValue, Formatting.Indented);
                 Client.Publish("home/device/fakedata/", Encoding.Default.GetBytes(CurrValue));
-                Console.WriteLine($"Published : {CurrValue}");
+                Console.WriteLine($"Published fakedata : {CurrValue}");
                 Thread.Sleep(1000);
             }
         }
