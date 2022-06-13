@@ -11,9 +11,9 @@
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconRemixIcon Kind="HomeWifiLine" Foreground="White" Margin="5,7,0,0"  />
-        </DataTemplate>    
+        </DataTemplate>
     </mah:MetroWindow.IconTemplate>
-        
+
     <DockPanel>
         <Grid DockPanel.Dock="Top">
             <StackPanel>
@@ -22,7 +22,7 @@
                         <MenuItem.Icon>
                             <iconPacks:MaterialDesign Kind="AttachFile" />
                         </MenuItem.Icon>
-                        <MenuItem Header="Start">
+                        <MenuItem x:Name="PopInfoDialog" Header="Start">
                             <MenuItem.Icon>
                                 <iconPacks:MaterialDesign Kind="PlayCircleFilled" />
                             </MenuItem.Icon>
@@ -61,7 +61,7 @@
                         </MenuItem>
                     </MenuItem>
 
-                    <MenuItem Header="_Help">
+                    <MenuItem x:Name="PopInfoView" Header="_Help">
                         <MenuItem.Icon>
                             <iconPacks:MaterialDesign Kind="Help" />
                         </MenuItem.Icon>
@@ -75,26 +75,30 @@
 
                 <ToolBarTray>
                     <ToolBar Style="{StaticResource MahApps.Styles.ToolBar}">
-                        <Button ToolTip="Strar MQTT Subscriber">
+                        <Button x:Name="StartSubscribe" ToolTip="Strar MQTT Subscriber">
                             <iconPacks:MaterialDesign Kind="PlayCircleFilled" />
                         </Button>
                         <Button ToolTip="Stop MQTT Subscriber">
                             <iconPacks:MaterialDesign Kind="PauseCircleFilled" />
                         </Button>
                         <Separator />
-                        <Button ToolTip="Exit">
+                        <Button x:Name="ExitToolbar" ToolTip="Exit">
                             <iconPacks:MaterialDesign Kind="ExitToApp" />
                         </Button>
                     </ToolBar>
                 </ToolBarTray>
-            </StackPanel>                
+            </StackPanel>
         </Grid>
-        
+
         <Grid Background="WhiteSmoke">
-            <ContentControl x:Name="ActiveItem" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="177*"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl x:Name="ActiveItem" Grid.ColumnSpan="2" />
         </Grid>
     </DockPanel>
-    
+
 
 
 </mah:MetroWindow>
