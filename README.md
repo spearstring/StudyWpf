@@ -36,3 +36,6 @@ C# WPF 학습리포지토리
    - MQTT Publish 프로그램
    - MQTT Broker 설정
    - MQTT Monitoring 프로그램
+
+## Day 9
+ - SmartHome 시스템 개발완료
