@@ -38,4 +38,4 @@ C# WPF 학습리포지토리
    - MQTT Monitoring 프로그램
 
 ## Day 9
- - SmartHome 시스템 개발완료
+ - SmartHome 시스템 개발완료 ( [클릭](https://github.com/spearstring/StudyWpf/tree/main/portfolio#smarthome-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%95%B1) )
